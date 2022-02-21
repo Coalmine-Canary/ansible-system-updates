@@ -3,16 +3,24 @@
     include_role:
       name: apt
     when: ansible_pkg_mgr == "apt"
+
   - name: yum package manager
     include_role:
       name: yum
     when: ansible_pkg_mgr == "yum"
+
   - name: dnf package manager
     include_role:
       name: dnf
     when: ansible_pkg_mgr == "dnf"
+
   - name: zypper package manager
     include_role:
       name: zypper
     when: ansible_pkg_mgr == "zypper"
+
+  - name: eopkg package manager
+    include_role:
+      name: eopkg
+    when: ansible_os_family == "Solus"
   when: ansible_facts|list

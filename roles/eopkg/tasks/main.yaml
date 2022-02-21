@@ -1,0 +1,14 @@
+- name: Check package installations
+  cmd: "eopkg check"
+
+- name: Process packages pending configuration
+  cmd: "eopkg configure-pending"
+
+- name: Upgrade # update-repo done by default
+  cmd: "eopkg upgrade"
+
+- name: Remove orphaned packages
+  cmd: "eopkg remove-orphans"
+
+- name: Remove stale locks
+  cmd: "eopkg clean"
